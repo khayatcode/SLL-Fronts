@@ -32,6 +32,21 @@ class SLL {
             return this.head.data
         }
     }
+
+    contains(value){
+        if(this.head == null){
+            return false
+        } else {
+            let promise = this.head
+            while(promise.next != null){
+                if(promise.data == value){
+                    return true
+                }
+                promise = promise.next
+            }
+            return false
+        }
+    }
 }
 
 let SLL1 = new SLL()
@@ -43,14 +58,6 @@ SLL1.addFront(5)
 console.log(SLL1)
 SLL1.addFront(73)
 console.log(SLL1)
-console.log("removeFront")
-console.log(SLL1)
-SLL1.removeFront()
-console.log(SLL1)
-SLL1.removeFront()
-console.log(SLL1)
-SLL1.removeFront()
-console.log(SLL1)
-
-console.log("front")
-console.log(SLL1.front())
+console.log("Contains")
+console.log(SLL1.contains(5))
+console.log(SLL1.contains(7))
