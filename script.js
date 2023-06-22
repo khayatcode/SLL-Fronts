@@ -10,36 +10,18 @@ class SLL {
         this.head = null;
     }
     addFront(data){
-        if(this.head == null){
-            this.head = new Node(data)
-            return data
-        }
-        else{
-            let present = this.head
-            while(present.next != null){
-                present = present.next
-            }
-            present.next = new Node(data)
-            return data
-        }
+        let newNode = new Node(data)
+        newNode.next = this.head
+        this.head = newNode
+        return this.head
     }
 
     removeFront(){
         if(this.head == null){
             return null
-        }
-        else if(this.head.next == null){
-            let temp = this.head.next
-            this.head = null
-            return temp
         } else {
-            let present = this.head
-            while(present.next.next != null){
-                present = present.next
-            }
-            let temp = present.next
-            present.next = null
-            return temp
+            this.head = this.head.next
+            return this.head
         }
     }
 
@@ -62,7 +44,13 @@ console.log(SLL1)
 SLL1.addFront(73)
 console.log(SLL1)
 console.log("removeFront")
+console.log(SLL1)
 SLL1.removeFront()
 console.log(SLL1)
+SLL1.removeFront()
+console.log(SLL1)
+SLL1.removeFront()
+console.log(SLL1)
+
 console.log("front")
 console.log(SLL1.front())
