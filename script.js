@@ -47,6 +47,19 @@ class SLL {
             return false
         }
     }
+    length(){
+        if(this.head == null){
+            return 0
+        } else {
+            let promise = this.head
+            let count = 0
+            while(promise){
+                count++
+                promise = promise.next
+            }
+            return count
+        }
+    }
 }
 
 let SLL1 = new SLL()
@@ -54,10 +67,9 @@ console.log("addFront")
 console.log(SLL1)
 SLL1.addFront(18)
 console.log(SLL1)
-SLL1.addFront(5)
+SLL1.addFront(20)
 console.log(SLL1)
-SLL1.addFront(73)
+SLL1.addFront(22)
 console.log(SLL1)
-console.log("Contains")
-console.log(SLL1.contains(5))
-console.log(SLL1.contains(7))
+console.log("length")
+console.log(SLL1.length())
